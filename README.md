@@ -208,3 +208,8 @@ unconditionally, use :TSUpdate all or just :TSUpdate.
 `:h lsp-vs-treesitter`
 
 [//]: # TODO(apaliwal): How to integrate treesitter with the statusline?
+
+Setting up Telescope
+==========================================================
+
+[//]: # TODO(apaliwal): Learn how to install and setup telescope
