@@ -1,9 +1,4 @@
-#TODO: Read the following help docs:
-# 1. :h insert.txt For shortcuts that can be used inside insert mode.
-# 2. :h cmdlint.txt
-# 3. :h tips.txt
-# 3. :h fzf-tips
-
+# My neovim configuration written in Lua.
 
 How to setup Neovim
 ===================
@@ -20,6 +15,47 @@ Key components to understand:
 
 Help is your friend - use `:h query<CTRL>-D` to expand the query to a list of matching
 options.
+
+Use this config out of the box
+======================================
+
+```bash
+git clone https://github.com/neovim/neovim
+cd neovim
+make
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+```
+
+Install Packer:
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+
+Clone this repo and move it to your config folder
+
+```
+git clone git@github.com:VastoLorde95/nvim-config.git
+cp -R nvim-config/nvim ~/.config
+mv nvim-config/nvim-config ~/.config/nvim
+```
+
+Now, you must start neovim twice:
+
+1. In the first startup, run `:PackerSync` to install all plugins.
+2. In the second startup, treesitter will download whatever parsers it needs, after 
+   which you can run `:Mason` to install your favourite langauge severs. Make sure that 
+   each languge server is configured in `after/plugin/lsp.lua`
+
+[//]: # TODO(apaliwal): Read the following help docs:
+[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.
+[//]: # 2. :h cmdlint.txt
+[//]: # 3. :h tips.txt
+[//]: # 4. :h fzf-tips
+
 
 
 Config Directory Structure
@@ -69,7 +105,7 @@ require('settings.lua')
 Configure tab line numbers
 ==========================================================
 
-# TODO(apaliwal): Setup tabline and statusline?
+[//]: # TODO(apaliwal): Setup tabline and statusline?
 
 `:h tabpagenr()`
 `:h setting-tabline`
@@ -123,17 +159,17 @@ servers.
 - Configure each installed language server through `lspconfig.SERVER_NAME.setup()`, 
   setting up their callbacks like `on_attach`, `capabilities`, etc. See 
   `:h lspconfig-setup` to learn more about how to setup your LSP.
-# TODO(apaliwal): Finish setting up LSP keybindings in `after/plugin/lsp.lua`
+[//]: # TODO(apaliwal): Finish setting up LSP keybindings in `after/plugin/lsp.lua`
 - See `:h lspconfig-keybindings` for suggested keybinds to use in the `on_attach` 
   section in calls to `setup()`.
 - See `:h lsp-buf` for a list of capabilities in the LSP.
 
-# TODO(apaliwal): Learn how to setup pylsp even further - eg, pylint, black, mypy.
+[//]: # TODO(apaliwal): Learn how to setup pylsp even further - eg, pylint, black, mypy.
 
 Autocomplete
-# TODO(apaliwal): Learn how autocomplete would work with LSP:
-# TODO(apaliwal): What is omnifunc?
-# TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?
+[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP:
+[//]: # TODO(apaliwal): What is omnifunc?
+[//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?
 
 
 Setting up Treesitter
@@ -168,7 +204,7 @@ To make sure a parser is at the latest compatible version (as specified in
 nvim-treesitter's lockfile.json), use :TSUpdate {language}. To update all parsers
 unconditionally, use :TSUpdate all or just :TSUpdate.
 
-# TODO(apaliwal): How does it intregrate with LSP?
+[//]: # TODO(apaliwal): How does it intregrate with LSP?
 `:h lsp-vs-treesitter`
 
-# TODO(apaliwal): How to integrate treesitter with the statusline?
+[//]: # TODO(apaliwal): How to integrate treesitter with the statusline?
