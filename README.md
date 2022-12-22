@@ -51,11 +51,11 @@ Now, you must start neovim twice:
    which you can run `:Mason` to install your favourite langauge severs. Make sure that 
    each languge server is configured in `after/plugin/lsp.lua`
 
-[//]: # TODO(apaliwal): Read the following help docs:
-[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.
-[//]: # 2. :h cmdlint.txt
-[//]: # 3. :h tips.txt
-[//]: # 4. :h fzf-tips
+[//]: # TODO(apaliwal): Read the following help docs:  
+[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.  
+[//]: # 2. :h cmdlint.txt  
+[//]: # 3. :h tips.txt  
+[//]: # 4. :h fzf-tips  
 
 
 
@@ -106,7 +106,7 @@ require('settings.lua')
 Configure tab line numbers
 ==========================================================
 
-[//]: # TODO(apaliwal): Setup tabline and statusline?
+[//]: # TODO(apaliwal): Setup tabline and statusline?  
 
 `:h tabpagenr()`
 `:h setting-tabline`
@@ -160,16 +160,16 @@ servers.
 - Configure each installed language server through `lspconfig.SERVER_NAME.setup()`, 
   setting up their callbacks like `on_attach`, `capabilities`, etc. See 
   `:h lspconfig-setup` to learn more about how to setup your LSP.
-[//]: # TODO(apaliwal): Finish setting up LSP keybindings in `after/plugin/lsp.lua`
+[//]: # TODO(apaliwal): Finish setting up LSP keybindings in `after/plugin/lsp.lua`  
 - See `:h lspconfig-keybindings` for suggested keybinds to use in the `on_attach` 
   section in calls to `setup()`.
 - See `:h lsp-buf` for a list of capabilities in the LSP.
 
 Intelligent Autocomplete with LSP
 ==========================================================
-[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP
-[//]: # TODO(apaliwal): What is omnifunc?
-[//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?
+[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP  
+[//]: # TODO(apaliwal): What is omnifunc?  
+[//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?  
 
 
 Setting up Treesitter
@@ -204,10 +204,10 @@ To make sure a parser is at the latest compatible version (as specified in
 nvim-treesitter's lockfile.json), use :TSUpdate {language}. To update all parsers
 unconditionally, use :TSUpdate all or just :TSUpdate.
 
-[//]: # TODO(apaliwal): How does it intregrate with LSP?
+[//]: # TODO(apaliwal): How does it intregrate with LSP?  
 `:h lsp-vs-treesitter`
 
-[//]: # TODO(apaliwal): How to integrate treesitter with the statusline?
+[//]: # TODO(apaliwal): How to integrate treesitter with the statusline?  
 
 Setting up Telescope
 ==========================================================
