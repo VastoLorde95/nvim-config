@@ -1,5 +1,5 @@
 # My neovim configuration written in Lua.
-n
+
 How to setup Neovim
 ===================
 
