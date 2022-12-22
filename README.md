@@ -19,6 +19,8 @@ options.
 Use this config out of the box
 ======================================
 
+Downlaod neovim and build from source.
+
 ```bash
 git clone https://github.com/neovim/neovim
 cd neovim
