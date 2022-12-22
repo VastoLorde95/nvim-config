@@ -1,5 +1,5 @@
 # My neovim configuration written in Lua.
-
+n
 How to setup Neovim
 ===================
 
@@ -164,10 +164,9 @@ servers.
   section in calls to `setup()`.
 - See `:h lsp-buf` for a list of capabilities in the LSP.
 
-[//]: # TODO(apaliwal): Learn how to setup pylsp even further - eg, pylint, black, mypy.
-
-Autocomplete
-[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP:
+Intelligent Autocomplete with LSP
+==========================================================
+[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP
 [//]: # TODO(apaliwal): What is omnifunc?
 [//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?
 
@@ -212,4 +211,15 @@ unconditionally, use :TSUpdate all or just :TSUpdate.
 Setting up Telescope
 ==========================================================
 
-[//]: # TODO(apaliwal): Learn how to install and setup telescope
+Telescope.nvim depends on plenary.nvim a library that contains utility functions for 
+nvim writter purely in Lua.
+
+The plugins can be found in the following repos:
+
+`nvim-lua/plenary.nvim`
+`nvim-telescope/telescope.nvim/`
+
+Telescope allows you to fuzzy find over arbirary lists in neovim and integrates 
+seamlessly with LSP, Treesitter, Git and even Telescope itself.
+
+All keymappings for telescope will begin with `<Leader>f` where 'f' stands for fuzzy.
