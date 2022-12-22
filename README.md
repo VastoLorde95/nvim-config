@@ -42,7 +42,6 @@ Clone this repo and move it to your config folder
 ```
 git clone git@github.com:VastoLorde95/nvim-config.git
 cp -R nvim-config/nvim ~/.config
-mv nvim-config/nvim-config ~/.config/nvim
 ```
 
 Now, you must start neovim twice:
