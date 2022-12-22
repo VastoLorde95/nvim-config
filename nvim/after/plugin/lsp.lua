@@ -3,7 +3,7 @@
 -- For more info, see:
 -- :h lspconfig
 
--- See `:help vim.diagnostic.*` for documentation on any of the functions below 
+-- See `:help vim.diagnostic.*` for documentation on any of the functions below
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -12,7 +12,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- Mappings.
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap = true, silent = true }
     vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -20,10 +20,10 @@ local on_attach = function(client, bufnr)
 
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
     -- An LSP is smart enough to distinguish between a defintion and a declaration,
-    -- whether it is global or local. So we can remap gD from jumping to "local" 
+    -- whether it is global or local. So we can remap gD from jumping to "local"
     -- declaration, to instead go to a defintion.
     -- TODO(apaliwal): Consider remapping <CTRL>-] to go to definition too?
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -47,22 +47,22 @@ local on_attach = function(client, bufnr)
 end
 
 
-require('lspconfig').pylsp.setup{
-	settings = {
-		pylsp = {
-			plugins = {
+require('lspconfig').pylsp.setup {
+    settings = {
+        pylsp = {
+            plugins = {
                 pylint = {
                     enabled = true,
                 },
                 mypy = {
                     enabled = true,
                 }
-			}
-		}
-	},
+            }
+        }
+    },
     on_attach = on_attach,
 }
 
-require('lspconfig').sumneko_lua.setup{
+require('lspconfig').sumneko_lua.setup {
     on_attach = on_attach,
 }
