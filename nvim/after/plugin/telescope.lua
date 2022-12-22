@@ -31,3 +31,7 @@ vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
 
 -- find errors
 vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {})
+
+-- Treesitter related keymappings
+-- find treesitter - search for function names and variables through treesitter
+vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})
