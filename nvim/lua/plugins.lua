@@ -4,24 +4,33 @@
 --vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- tokyonight colorscheme.
-  use 'folke/tokyonight.nvim'
+    -- tokyonight colorscheme.
+    use 'folke/tokyonight.nvim'
 
-  -- LSP config
-  use 'neovim/nvim-lspconfig'
-  -- LSP installer
-  use 'williamboman/mason.nvim'
+    -- LSP config
+    use 'neovim/nvim-lspconfig'
+    -- LSP installer
+    use 'williamboman/mason.nvim'
 
-  -- Statusline
-  --use {'nvim-lualine/lualine.nvim'}
+    -- Statusline
+    --use {'nvim-lualine/lualine.nvim'}
 
-  -- Treesitter
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
+    -- Plenary
+    use 'nvim-lua/plenary.nvim'
+
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+    }
 
 end)
