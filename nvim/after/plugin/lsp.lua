@@ -47,19 +47,7 @@ local on_attach = function(client, bufnr)
 end
 
 
-require('lspconfig').pylsp.setup {
-    settings = {
-        pylsp = {
-            plugins = {
-                pylint = {
-                    enabled = true,
-                },
-                mypy = {
-                    enabled = true,
-                }
-            }
-        }
-    },
+require('lspconfig').pyright.setup {
     on_attach = on_attach,
 }
 
