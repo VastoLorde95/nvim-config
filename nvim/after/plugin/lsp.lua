@@ -122,6 +122,7 @@ cmp.setup {
 
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'nvim_lua', },
         -- { name = 'treesitter' },
         -- TODO(apaliwal): If LSP and treesitter fail to deliever, might make sense to 
         -- use good 'ol ctrl-p and ctrl-n?  Or is the philosohpy that we won't use them
