@@ -52,5 +52,12 @@ require('lspconfig').pyright.setup {
 }
 
 require('lspconfig').sumneko_lua.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {'vim'},
+            },
+        },
+    },
     on_attach = on_attach,
 }
