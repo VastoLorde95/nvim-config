@@ -25,9 +25,10 @@ local on_attach = function(client, bufnr)
     -- An LSP is smart enough to distinguish between a defintion and a declaration,
     -- whether it is global or local. So we can remap gD from jumping to "local"
     -- declaration, to instead go to a defintion.
-    -- TODO(apaliwal): Consider remapping <CTRL>-] to go to definition too?
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, bufopts)
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
