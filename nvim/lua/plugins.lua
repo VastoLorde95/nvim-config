@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
 
     -- Statusline
-    --use {'nvim-lualine/lualine.nvim'}
+    use {'nvim-lualine/lualine.nvim'}
 
     -- Treesitter
     use {

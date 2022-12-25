@@ -103,14 +103,6 @@ require('plugins.lua')
 require('settings.lua')
 ```
 
-Configure tab line numbers
-==========================================================
-
-[//]: # TODO(apaliwal): Setup tabline and statusline?  
-
-`:h tabpagenr()`
-`:h setting-tabline`
-
 Install packer.nvim
 ==========================================================
 
@@ -137,6 +129,22 @@ To install a colorscheme:
 Install 'folke/tokyonight.nvim' using packer.
 
 Setup this colorscheme in after/plugin/color.lua
+
+
+Configure statuline and tabline
+==========================================================
+
+For the statusline, we will use the plugin `nvim-lualine/lualine.nvim`
+
+For the tabline, we will use neovim's `v:lua` feature to create the tabline string
+natively in Lua. 
+
+We will implement the tabline in lua/mytabline.lua and "require" it in our init.lua
+file. Will can register our function that creates the tabline string in the 
+global environment using `_G` and then call it using `%!v:lua.my_tabline()`.
+
+We will also use the `vim.fn` construct to invoke vim functions and use their return 
+values such as `vim.fn.tabpagenr()`
 
 
 Setting up LSP
