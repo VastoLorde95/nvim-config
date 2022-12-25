@@ -47,4 +47,7 @@ return require('packer').startup(function(use)
         tag = '0.1.0',
     }
 
+    -- Git signs
+    use { 'lewis6991/gitsigns.nvim', }
+
 end)

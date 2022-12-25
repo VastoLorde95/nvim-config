@@ -255,3 +255,9 @@ Telescope allows you to fuzzy find over arbirary lists in neovim and integrates
 seamlessly with LSP, Treesitter, Git and even Telescope itself.
 
 All keymappings for telescope will begin with `<Leader>f` where 'f' stands for fuzzy.
+
+Integration with git
+==========================================================
+
+We will use the plugin `lewis6991/gitsigns.nvim` to show diff status per line in the 
+gutter next to the line numbers.
