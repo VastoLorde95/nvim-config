@@ -169,15 +169,37 @@ servers.
 - Configure each installed language server through `lspconfig.SERVER_NAME.setup()`, 
   setting up their callbacks like `on_attach`, `capabilities`, etc. See 
   `:h lspconfig-setup` to learn more about how to setup your LSP.
-[//]: # TODO(apaliwal): Finish setting up LSP keybindings in `after/plugin/lsp.lua`  
 - See `:h lspconfig-keybindings` for suggested keybinds to use in the `on_attach` 
   section in calls to `setup()`.
 - See `:h lsp-buf` for a list of capabilities in the LSP.
 
 Intelligent Autocomplete with LSP
 ==========================================================
-[//]: # TODO(apaliwal): Learn how autocomplete would work with LSP  
-[//]: # TODO(apaliwal): What is omnifunc?  
+
+LSP provides manual autocompletion through `omnifunc`, but we must use a plugin for full
+autocomplete. 
+
+`hrsh7th/nvim-cmp/` implements an autocomplete engine for neovim which can provide 
+suggestions from external sources that have been registered in the neovim config.
+
+In this config, we will use the following sources.
+
+ - `hrsh7th/cmp-nvim-lsp`
+ - `hrsh7th/cmp-buffer`
+ - `hrsh7th/cmp-path`
+ - `hrsh7th/cmp-cmdline`
+
+
+In insert mode, `cmp-nvim-lsp` will have the highest priority for autocomplete, 
+followed by `cmp-buffer`. 
+
+In search mode `/`, `cmp-buffer` will be used as the source.
+
+In command mode `:`, `cmp-path` will be used as the source.
+
+`cmp-buffer` is configured so that all open buffers are used for autocomplete, except 
+those with size > 10 MB.
+
 [//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?  
 
 

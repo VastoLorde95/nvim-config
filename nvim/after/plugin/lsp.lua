@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
-    -- I don't know what these do yet
+    -- I don't have a good use case for these yet.
     -- vim.keymap.set('n', '<Leader>k', vim.lsp.buf.signature_help, bufopts)
     -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     -- vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -45,9 +45,12 @@ local on_attach = function(client, bufnr)
     -- end, bufopts)
 end
 
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require('lspconfig').pyright.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 
 require('lspconfig').sumneko_lua.setup {
@@ -59,4 +62,107 @@ require('lspconfig').sumneko_lua.setup {
         },
     },
     on_attach = on_attach,
+    capabilities = capabilities,
 }
+
+-- nvim-cmp setup
+
+local get_bufnrs = function()
+    -- Don't use buffers with size > 10 MB for autocompletion
+    local buf_list = vim.api.nvim_list_bufs()
+    local result = {}
+    for _, buf in ipairs(buf_list) do
+        local byte_size = vim.api.nvim_buf_get_offset(
+            buf, vim.api.nvim_buf_line_count(buf))
+        if byte_size < 10 * 1024 * 1024 then
+            table.insert(result, buf)
+        end
+    end
+    return result
+end
+
+
+-- `:h nvim-cmp`
+local cmp = require 'cmp'
+cmp.setup {
+    -- Uncomment if you want to autocomplete to be triggered only manually.
+    --completion = {
+    --    autocomplete = false,
+    --},
+    mapping = cmp.mapping.preset.insert({
+        -- Invoke completion
+        -- TODO(apaliwal): Should we map C-n and C-p to this too?
+        ['<C-Space>'] = cmp.mapping.complete(),
+        -- Confirm selection
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        -- Select next and previous items
+        ['<Tab>'] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_next_item()
+                else
+                    fallback()
+                end
+            end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_prev_item()
+                else
+                    fallback()
+                end
+            end, { 'i', 's' }),
+        -- Scroll through docuemntation if visible.
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    }),
+
+    sources = {
+        { name = 'nvim_lsp' },
+        -- { name = 'treesitter' },
+        -- TODO(apaliwal): If LSP and treesitter fail to deliever, might make sense to 
+        -- use good 'ol ctrl-p and ctrl-n?  Or is the philosohpy that we won't use them
+        -- anymore?
+        {
+            name = 'buffer' ,
+            option = {
+                get_bufnrs = get_bufnrs,
+            }
+        },
+    },
+}
+
+-- Enable autocomplete for the / and : modes
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        {
+            name = 'buffer',
+            option = {
+                get_bufnrs = get_bufnrs,
+            }
+        }
+    }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources(
+        {
+            { name = 'path' }
+        },
+        {
+            {
+                name = 'cmdline',
+                option = {
+                    ignore_cmds = { 'Man', '!' }
+                }
+            }
+        }
+    )
+})

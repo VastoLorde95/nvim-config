@@ -22,3 +22,6 @@ map('n', 'N', 'Nzz', options)
 
 --remove highlights
 map('n', '<Leader>n', ':nohlsearch<CR>', options)
+
+--remove highlights
+map('n', '<Leader>n', ':nohlsearch<CR>', options)
