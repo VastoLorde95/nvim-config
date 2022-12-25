@@ -30,9 +30,9 @@ return require('packer').startup(function(use)
     -- See https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-nvim-lua'
+    --use 'hrsh7th/cmp-path'
+    --use 'hrsh7th/cmp-cmdline'
     --use 'ray-x/cmp-treesitter'
 
     -- Treesitter --

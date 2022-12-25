@@ -186,16 +186,13 @@ In this config, we will use the following sources.
 
  - `hrsh7th/cmp-nvim-lsp`
  - `hrsh7th/cmp-buffer`
- - `hrsh7th/cmp-path`
- - `hrsh7th/cmp-cmdline`
+ - `hrsh7th/cmp-nvim-lua`
 
 
 In insert mode, `cmp-nvim-lsp` will have the highest priority for autocomplete, 
-followed by `cmp-buffer`. 
+followed by `cmp-nvim-lua` and then `cmp-buffer`. 
 
-In search mode `/`, `cmp-buffer` will be used as the source.
-
-In command mode `:`, `cmp-path` will be used as the source.
+`cmp-nvim-lua` provides autocomplete support for the neovim Lua API.
 
 `cmp-buffer` is configured so that all open buffers are used for autocomplete, except 
 those with size > 10 MB.

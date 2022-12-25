@@ -136,34 +136,34 @@ cmp.setup {
     },
 }
 
--- Enable autocomplete for the / and : modes
--- `/` cmdline setup.
-cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        {
-            name = 'buffer',
-            option = {
-                get_bufnrs = get_bufnrs,
-            }
-        }
-    }
-})
-
--- `:` cmdline setup.
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources(
-        {
-            { name = 'path' }
-        },
-        {
-            {
-                name = 'cmdline',
-                option = {
-                    ignore_cmds = { 'Man', '!' }
-                }
-            }
-        }
-    )
-})
+---- Enable autocomplete for the / and : modes
+---- `/` cmdline setup.
+--cmp.setup.cmdline('/', {
+--    mapping = cmp.mapping.preset.cmdline(),
+--    sources = {
+--        {
+--            name = 'buffer',
+--            option = {
+--                get_bufnrs = get_bufnrs,
+--            }
+--        }
+--    }
+--})
+--
+---- `:` cmdline setup.
+--cmp.setup.cmdline(':', {
+--    mapping = cmp.mapping.preset.cmdline(),
+--    sources = cmp.config.sources(
+--        {
+--            { name = 'path' }
+--        },
+--        {
+--            {
+--                name = 'cmdline',
+--                option = {
+--                    ignore_cmds = { 'Man', '!' }
+--                }
+--            }
+--        }
+--    )
+--})
