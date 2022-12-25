@@ -1,37 +1,28 @@
--- global, window and buffer options	
-local o = vim.o
-local wo = vim.wo
-local bo = vim.bo
-
+-- global = vim.o
+-- window = vim.wo
+-- buffer = vim.bo
 
 -- Set completopt style to menu. 
--- If you use the default, for some reason omnifunc completion will open a split pane 
--- everytime you use it.
-o.completeopt = 'menu'
-
-o.background = 'dark'
+vim.o.completeopt = 'menu'
 
 -- Set the delay for vim escape key
-o.ttimeoutlen = 5
-
--- Search through subdirs
--- o.path += **
+vim.o.ttimeoutlen = 5
 
 --ignore case when searching
-o.ic = true
+vim.o.ic = true
 
 --line numbers
-o.nu = true
-o.rnu = true
+vim.o.nu = true
+vim.o.rnu = true
 
--- status line
-o.laststatus = 2
+-- global status line
+vim.o.laststatus = 3
 
-o.expandtab = true
-o.tabstop = 4
-o.softtabstop = 4
-o.shiftwidth = 4
-o.autoindent = true
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.autoindent = true
 
 -- colorcolumn
-wo.colorcolumn = "88"
+vim.wo.colorcolumn = "88"
