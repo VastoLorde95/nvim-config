@@ -28,7 +28,7 @@ local function get_tab_label(tab_index)
     if bufname ~= "" then
         tab_label = tab_label .. " " .. vim.fn.fnamemodify(bufname, ":t") .. " "
     else
-        tab_label = tab_label .. "[Empty]" .. " "
+        tab_label = tab_label .. "[No Name]" .. " "
     end
 
     -- modified indicator
