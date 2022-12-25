@@ -110,7 +110,8 @@ Install plugin 'wbthomason/packer.nvim' to manage plugins.
 
 To get started, first clone this repository to somewhere on your packpath, e.g.:
 
-`git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
+`git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
 - How do plugins work in nvim?
 `:h package`
