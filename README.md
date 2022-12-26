@@ -143,6 +143,8 @@ values such as `vim.fn.tabpagenr()`
 Setting up LSP
 ==========================================================
 
+[//]: # TODO(apaliwal): Refactor `nvim/after/plugins/lsp.lua`, it has become too large.
+
 Neovim comes with an inbuilt lsp client. See `:h lsp`
 
 We will setup this client and its interaction with the LSP servers through the plugin:
