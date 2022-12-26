@@ -27,3 +27,7 @@ vim.bo.smartindent = true
 
 -- colorcolumn
 vim.wo.colorcolumn = "88"
+
+vim.diagnostic.config {
+    signs = false,
+}
