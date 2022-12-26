@@ -52,6 +52,32 @@ require('lspconfig').pyright.setup {
     capabilities = capabilities,
 }
 
+require('lspconfig').pylsp.setup {
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            plugins = {
+                -- Each of these plugins must be installed to be able to use them.
+                pylint = { enabled = true },
+
+                pyflakes  = { enabled = false },
+                pycodestyle  = { enabled = false },
+                mccabe  = { enabled = false },
+                preload  = { enabled = false },
+                yapf  = { enabled = false },
+                autopep8 = { enabled = false },
+                jedi_completion = { enabled = false },
+                jedi_definition = { enabled = false },
+                jedi_hover = { enabled = false },
+                jedi_references = { enabled = false },
+                jedi_signature_help = { enabled = false },
+                jedi_symbols = { enabled = false },
+
+            },
+        }
+    }
+}
+
 require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {

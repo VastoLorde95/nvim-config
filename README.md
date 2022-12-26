@@ -51,14 +51,6 @@ Now, you must start neovim twice:
    which you can run `:Mason` to install your favourite langauge severs. Make sure that 
    each languge server is configured in `after/plugin/lsp.lua`
 
-[//]: # TODO(apaliwal): Read the following help docs:  
-[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.  
-[//]: # 2. :h cmdlint.txt  
-[//]: # 3. :h tips.txt  
-[//]: # 4. :h fzf-tips  
-
-
-
 Config Directory Structure
 =========================================
 
@@ -267,3 +259,36 @@ Python
 
 Treesitter indentation does not work as expected for python. Apparently this is a bug 
 in treesitter, so we turn off the indent module from treesitter.
+
+Python uses two LSPs - pyright for static typechecking and autocomplete. 
+
+The configuration for another language server - pylsp is available. pylsp can be 
+configured to use over half a dozen external tools for linting, code formatting, 
+refactoring, etc. Currently, only pylint is available.
+
+[//]: # TODO(apaliwal): Is it worth replacing pyright with mypy and jedi so that you   
+[//]: use only one LSP instead of two?  
+
+[//]: # TODO(apaliwal): Evaluate the performance implication of using two langauge   
+[//]: servers for python.  
+
+Lua
+==========================================================
+
+[//]: # TODO(apaliwal): Document the LSP setup for Lua and the neovim Lua api.  
+
+C++
+==========================================================
+
+[//]: # TODO(apaliwal): Setup langauge servers for C++  
+
+
+Misc
+==========================================================
+
+[//]: # TODO(apaliwal): Read the following help docs:  
+[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.  
+[//]: # 2. :h cmdlint.txt  
+[//]: # 3. :h tips.txt  
+[//]: # 4. :h fzf-tips  
+
