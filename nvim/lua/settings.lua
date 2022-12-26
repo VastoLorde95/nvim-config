@@ -27,3 +27,5 @@ vim.bo.smartindent = true
 
 -- colorcolumn
 vim.wo.colorcolumn = "88"
+
+vim.wo.signcolumn = "auto:1-2"
