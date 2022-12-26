@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
 
     -- Statusline --
-    use {'nvim-lualine/lualine.nvim'}
+    use { 'nvim-lualine/lualine.nvim' }
 
     -- LSP --
     -- mason installs lsp
@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
 
     -- Auto-completion  --
-    -- nvim-cmp is an engine for autocompletion that will pull in suggestions from 
+    -- nvim-cmp is an engine for autocompletion that will pull in suggestions from
     -- external sources
     use 'hrsh7th/nvim-cmp'
     -- Plugins for nvim-cmp sources
@@ -49,5 +49,4 @@ return require('packer').startup(function(use)
 
     -- Git signs
     use { 'lewis6991/gitsigns.nvim', }
-
 end)
