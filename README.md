@@ -1,7 +1,6 @@
 # My neovim configuration written in Lua.
 
-How to setup Neovim
-===================
+## How to setup Neovim
 
 Goal: Understand how neovim works so that you can customize and extend it natively in 
 Lua.
@@ -16,8 +15,7 @@ Key components to understand:
 Help is your friend - use `:h query<CTRL>-D` to expand the query to a list of matching
 options.
 
-Use this config out of the box
-======================================
+## Use this config out of the box
 
 Downlaod neovim and build from source.
 
@@ -51,8 +49,7 @@ Now, you must start neovim twice:
    which you can run `:Mason` to install your favourite langauge severs. Make sure that 
    each languge server is configured in `after/plugin/lsp.lua`
 
-Config Directory Structure
-=========================================
+## Config Directory Structure
 
 See `:h initialization` to learn how nvim starts up.
 Run `:lua print(vim.inspect(vim.api.nvim_list_runtime_paths()))` to inspect your 
@@ -95,8 +92,7 @@ require('plugins.lua')
 require('settings.lua')
 ```
 
-Install packer.nvim
-==========================================================
+## Install packer.nvim
 
 Install plugin 'wbthomason/packer.nvim' to manage plugins.
 
@@ -114,8 +110,7 @@ To get started, first clone this repository to somewhere on your packpath, e.g.:
 `:h packpath`
 
 
-Using packer to change colorscheme.
-==========================================================
+## Using packer to change colorscheme.
 
 To install a colorscheme:
 
@@ -124,8 +119,7 @@ Install 'folke/tokyonight.nvim' using packer.
 Setup this colorscheme in after/plugin/color.lua
 
 
-Configure statuline and tabline
-==========================================================
+## Configure statuline and tabline
 
 For the statusline, we will use the plugin `nvim-lualine/lualine.nvim`
 
@@ -140,8 +134,7 @@ We will also use the `vim.fn` construct to invoke vim functions and use their re
 values such as `vim.fn.tabpagenr()`
 
 
-Setting up LSP
-==========================================================
+## Setting up LSP
 
 [//]: # TODO(apaliwal): Refactor `nvim/after/plugins/lsp.lua`, it has become too large.
 
@@ -167,8 +160,7 @@ servers.
   section in calls to `setup()`.
 - See `:h lsp-buf` for a list of capabilities in the LSP.
 
-Intelligent Autocomplete with LSP
-==========================================================
+## Intelligent Autocomplete with LSP
 
 LSP provides manual autocompletion through `omnifunc`, but we must use a plugin for full
 autocomplete. 
@@ -194,8 +186,7 @@ those with size > 10 MB.
 [//]: # TODO(apaliwal): How is omnifunc different from the default ctrl-n ctrl-p in ins mode?  
 
 
-Setting up Treesitter
-==========================================================
+## Setting up Treesitter
 
 Treesitter provides incremental parsing of buffers to construct syntax trees. A 
 "module" can "query" the treesitter syntax tree to implement features such as 
@@ -231,8 +222,7 @@ unconditionally, use :TSUpdate all or just :TSUpdate.
 
 [//]: # TODO(apaliwal): How to integrate treesitter with the statusline?  
 
-Setting up Telescope
-==========================================================
+## Setting up Telescope
 
 Telescope.nvim depends on plenary.nvim a library that contains utility functions for 
 nvim writter purely in Lua.
@@ -247,17 +237,15 @@ seamlessly with LSP, Treesitter, Git and even Telescope itself.
 
 All keymappings for telescope will begin with `<Leader>f` where 'f' stands for fuzzy.
 
-Integration with git
-==========================================================
+## Integration with git
 
 We will use the plugin `lewis6991/gitsigns.nvim` to show diff status per line in the 
 gutter next to the line numbers.
 
-Langauge specific configurations
-==========================================================
+## Langauge specific configurations
 
 Python
-==========================================================
+----------------------------------------------------------
 
 Treesitter indentation does not work as expected for python. Apparently this is a bug 
 in treesitter, so we turn off the indent module from treesitter.
@@ -275,18 +263,27 @@ refactoring, etc. Currently, only pylint is available.
 [//]: servers for python.  
 
 Lua
-==========================================================
+----------------------------------------------------------
 
 [//]: # TODO(apaliwal): Document the LSP setup for Lua and the neovim Lua api.  
 
 C++
-==========================================================
+----------------------------------------------------------
 
 [//]: # TODO(apaliwal): Setup langauge servers for C++  
 
+## Continuous Integration
 
-Misc
-==========================================================
+[//]: # TODO(apaliwal): How would you set up continuous integration for this config?
+
+Continuous integration for this repo should ensure the following
+
+ 1. Neovim should start up without any errors or warnings
+ 2. Startup time should be less than some reasonable value X.
+ 3. Ensure that all keymaps work as expected.
+ 4. Should ensure that there is no regression in the runtime of certain tasks.
+
+## Misc
 
 [//]: # TODO(apaliwal): Read the following help docs:  
 [//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.  
