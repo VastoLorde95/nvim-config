@@ -17,8 +17,12 @@ require 'nvim-treesitter.configs'.setup {
     ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
     -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
-    -- `false` will disable the whole extension
-    indent = { enable = true },
+    -- This wasn't working right with Python so disable for now.
+    indent = {
+        enable = true,
+        disable = {'python'}
+    },
+
     highlight = { enable = true },
     -- Select scopes based on which node you are on as per the tree sitter, expand this
     -- scope by going up to the parent or going down into the child

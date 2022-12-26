@@ -258,3 +258,12 @@ Integration with git
 
 We will use the plugin `lewis6991/gitsigns.nvim` to show diff status per line in the 
 gutter next to the line numbers.
+
+Langauge specific configurations
+==========================================================
+
+Python
+==========================================================
+
+Treesitter indentation does not work as expected for python. Apparently this is a bug 
+in treesitter, so we turn off the indent module from treesitter.
