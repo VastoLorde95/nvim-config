@@ -276,18 +276,11 @@ C++
 
 [//]: # TODO(apaliwal): How would you set up continuous integration for this config?
 
+[Use this for reference](https://www.reddit.com/r/neovim/comments/103d9on/releases_docs_tests_for_plugins/)
+
 Continuous integration for this repo should ensure the following
 
  1. Neovim should start up without any errors or warnings
  2. Startup time should be less than some reasonable value X.
  3. Ensure that all keymaps work as expected.
  4. Should ensure that there is no regression in the runtime of certain tasks.
-
-## Misc
-
-[//]: # TODO(apaliwal): Read the following help docs:  
-[//]: # 1. :h insert.txt For shortcuts that can be used inside insert mode.  
-[//]: # 2. :h cmdlint.txt  
-[//]: # 3. :h tips.txt  
-[//]: # 4. :h fzf-tips  
-
