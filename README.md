@@ -19,6 +19,8 @@ options.
 
 Downlaod neovim and build from source.
 
+On Ubuntu 22.04, you can do -
+
 ```bash
 git clone https://github.com/neovim/neovim
 cd neovim
