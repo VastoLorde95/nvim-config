@@ -22,8 +22,9 @@ Downlaod neovim and build from source.
 ```bash
 git clone https://github.com/neovim/neovim
 cd neovim
-make
-make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo apt install libtool-bin
+sudo make
+sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
