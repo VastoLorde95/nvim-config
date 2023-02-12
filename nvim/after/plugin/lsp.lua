@@ -25,7 +25,6 @@ local on_attach = function(client, bufnr)
     -- declaration, to instead go to a defintion.
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
