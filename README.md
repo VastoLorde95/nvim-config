@@ -117,7 +117,7 @@ To get started, first clone this repository to somewhere on your packpath, e.g.:
 
 To install a colorscheme:
 
-Install 'folke/tokyonight.nvim' using packer.
+Install 'sainnhe/sonokai' using packer.
 
 Setup this colorscheme in after/plugin/color.lua
 
