@@ -1,5 +1,8 @@
 # My neovim configuration written in Lua.
 
+
+![neovim](screenshot.png)
+
 ## How to setup Neovim
 
 Goal: Understand how neovim works so that you can customize and extend it natively in 
