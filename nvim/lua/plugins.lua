@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- tokyonight colorscheme. --
-    use 'folke/tokyonight.nvim'
     use 'sainnhe/sonokai'
 
     -- Statusline --
