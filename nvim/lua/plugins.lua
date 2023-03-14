@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     -- Plenary --
     use 'nvim-lua/plenary.nvim'
 
-    -- tokyonight colorscheme. --
+    -- sonokai colorscheme. --
     use 'sainnhe/sonokai'
 
     -- Statusline --
@@ -43,6 +43,9 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
     }
+
+    -- Diffview.nvim
+    use { 'sindrets/diffview.nvim' }
 
     -- Git signs
     use { 'lewis6991/gitsigns.nvim', }
