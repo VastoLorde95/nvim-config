@@ -33,20 +33,17 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lua'
 
     -- Treesitter --
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    use 'nvim-treesitter/nvim-treesitter-context'
+
 
     -- Telescope --
-    use {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
-    }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', }
 
     -- Diffview.nvim
-    use { 'sindrets/diffview.nvim' }
+    use 'sindrets/diffview.nvim'
 
     -- Git signs
-    use { 'lewis6991/gitsigns.nvim', }
+    use 'lewis6991/gitsigns.nvim'
 end)
