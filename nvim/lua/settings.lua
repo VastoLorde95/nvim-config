@@ -33,3 +33,6 @@ vim.wo.cursorline = true
 vim.diagnostic.config {
     signs = false,
 }
+
+-- Disable mouse mode
+vim.o.mouse = ""
