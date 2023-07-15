@@ -51,14 +51,7 @@ require('lspconfig').pyright.setup {
     capabilities = capabilities,
 }
 
-require('lspconfig').lua_ls.setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = {'vim'},
-            },
-        },
-    },
+require('lspconfig').luau_lsp.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }

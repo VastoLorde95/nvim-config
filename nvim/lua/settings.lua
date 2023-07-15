@@ -36,3 +36,7 @@ vim.diagnostic.config {
 
 -- Disable mouse mode
 vim.o.mouse = ""
+
+
+-- Disable swap files
+vim.opt.swapfile = false
