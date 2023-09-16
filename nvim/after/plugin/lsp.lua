@@ -69,6 +69,11 @@ require('lspconfig').clangd.setup {
     capabilities = capabilities,
 }
 
+require('lspconfig').bashls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
 -- nvim-cmp setup
 
 local get_bufnrs = function()
