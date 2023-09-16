@@ -25,6 +25,14 @@ local on_attach = function(client, bufnr)
     -- declaration, to instead go to a defintion.
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+
+    -- to to defintion in new split
+    vim.keymap.set('n', '<Leader>vd', ":vs<CR>:lua vim.lsp.buf.definition()<CR>", bufopts)
+    -- go to definition in new tab
+    vim.keymap.set('n', '<C-w>d', ":vs<CR><C-W>T:lua vim.lsp.buf.definition()<CR>", bufopts)
+
     vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
@@ -33,9 +41,9 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
+    vim.keymap.set('n', '<Leader>k', vim.lsp.buf.signature_help, bufopts)
+
     -- I don't have a good use case for these yet.
-    -- vim.keymap.set('n', '<Leader>k', vim.lsp.buf.signature_help, bufopts)
-    -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     -- vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<Leader>wl', function()
