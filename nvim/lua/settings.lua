@@ -37,6 +37,8 @@ vim.diagnostic.config {
 -- Disable mouse mode
 vim.o.mouse = ""
 
+-- Open splits on the right.
+vim.o.splitright = true
 
 -- Disable swap files
 vim.opt.swapfile = false
