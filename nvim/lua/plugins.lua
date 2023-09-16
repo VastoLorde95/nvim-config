@@ -34,9 +34,7 @@ return require('packer').startup(function(use)
 
     -- Treesitter --
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
     use 'nvim-treesitter/nvim-treesitter-context'
-
 
     -- Telescope --
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', }
@@ -46,6 +44,9 @@ return require('packer').startup(function(use)
 
     -- Git signs
     use 'lewis6991/gitsigns.nvim'
+
+    -- nerdcommenter
+    use 'preservim/nerdcommenter'
 
     -- Tmux and Nvim integration
     use { 'alexghergh/nvim-tmux-navigation', config = function()
@@ -62,6 +63,7 @@ return require('packer').startup(function(use)
         vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 
     end
+
 }
 
 end)
