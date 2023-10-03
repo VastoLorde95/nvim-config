@@ -11,7 +11,8 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- sonokai colorscheme. --
-    use 'sainnhe/sonokai'
+    --use 'sainnhe/sonokai'
+    use 'judaew/ronny.nvim'
 
     -- Statusline --
     use { 'nvim-lualine/lualine.nvim' }
