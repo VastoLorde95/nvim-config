@@ -26,7 +26,7 @@ vim.o.autoindent = true
 vim.bo.smartindent = true
 
 -- colorcolumn
-vim.wo.colorcolumn = "88"
+vim.wo.colorcolumn = ""
 vim.wo.cursorline = true
 
 -- disable diagnostics in the signcolumn

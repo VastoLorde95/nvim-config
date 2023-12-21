@@ -74,6 +74,18 @@ require('lspconfig').bashls.setup {
     capabilities = capabilities,
 }
 
+require('lspconfig').rust_analyzer.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = true;
+            }
+        }
+    }
+}
+
 -- nvim-cmp setup
 
 local get_bufnrs = function()
