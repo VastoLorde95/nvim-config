@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
 
     -- Telescope --
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.5', }
 
     -- Diffview.nvim
     use 'sindrets/diffview.nvim'
