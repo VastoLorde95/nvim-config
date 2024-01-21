@@ -20,8 +20,8 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, options)
 -- find help
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, options)
 
--- TODO(apaliwal): Implement fuzzy search for any pattern within the current buffer
--- and jump to that location on <cr>
+-- fuzzy search within current buffer
+vim.keymap.set('n', '<leader>fp', builtin.current_buffer_fuzzy_find, options)
 
 -- LSP related keymappings
 -- find references
