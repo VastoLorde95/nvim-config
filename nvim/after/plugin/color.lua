@@ -6,7 +6,7 @@ require("ronny").setup({
         monokai_original  = false,
         -- Highlight only LineNr (current line number) for cursorline
         -- option. This also enables cursorline (:set cursorline)
-        only_CursorLineNr = true,
+        only_CursorLineNr = false,
         -- Highlight LineNr for relativenumbers. This also enables
         -- relativenumbers option (:set relativenumbers)
         hi_relativenumber = true,

@@ -42,3 +42,7 @@ vim.o.splitright = true
 
 -- Disable swap files
 vim.opt.swapfile = false
+
+-- Sync with system clipboard
+vim.opt.clipboard = "unnamedplus"
+

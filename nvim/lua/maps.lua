@@ -19,5 +19,9 @@ map('n', '<Leader>w', ':tabc<CR>', options)
 map('n', 'n', 'nzz', options)
 map('n', 'N', 'Nzz', options)
 
+-- jump to previous edit AND center the screen
+map('n', 'g;', 'g;zz', options)
+map('n', 'g,', 'g,zz', options)
+
 --remove highlights
 map('n', '<Leader>n', ':nohlsearch<CR>', options)

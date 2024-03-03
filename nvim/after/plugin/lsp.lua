@@ -24,14 +24,14 @@ local on_attach = function(client, bufnr)
     -- whether it is global or local. So we can remap gD from jumping to "local"
     -- declaration, to instead go to a defintion.
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>zz", bufopts)
 
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 
     -- to to defintion in new split
-    vim.keymap.set('n', '<Leader>vd', ":vs<CR>:lua vim.lsp.buf.definition()<CR>", bufopts)
+    vim.keymap.set('n', '<Leader>vd', ":vs<CR>:lua vim.lsp.buf.definition()<CR>zz", bufopts)
     -- go to definition in new tab
-    vim.keymap.set('n', '<C-w>d', ":vs<CR><C-W>T:lua vim.lsp.buf.definition()<CR>", bufopts)
+    vim.keymap.set('n', '<C-w>d', ":vs<CR><C-W>T:lua vim.lsp.buf.definition()<CR>zz", bufopts)
 
     vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
@@ -80,8 +80,15 @@ require('lspconfig').rust_analyzer.setup{
     settings = {
         ['rust-analyzer'] = {
             diagnostics = {
-                enable = true;
-            }
+                enable = true,
+            },
+            cachePriming = {
+                numThreads = 8,
+            },
+            numThreads = 8,
+            check = {
+                extraArgs = {"--jobs 8"},
+            },
         }
     }
 }
