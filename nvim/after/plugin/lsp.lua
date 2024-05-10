@@ -77,20 +77,6 @@ require('lspconfig').bashls.setup {
 require('lspconfig').rust_analyzer.setup{
     on_attach = on_attach,
     capabilities = capabilities,
-    settings = {
-        ['rust-analyzer'] = {
-            diagnostics = {
-                enable = true,
-            },
-            cachePriming = {
-                numThreads = 8,
-            },
-            numThreads = 8,
-            check = {
-                extraArgs = {"--jobs 8"},
-            },
-        }
-    }
 }
 
 -- nvim-cmp setup

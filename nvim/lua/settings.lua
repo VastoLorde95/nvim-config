@@ -46,3 +46,5 @@ vim.opt.swapfile = false
 -- Sync with system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- 
+vim.opt.equalalways = true
