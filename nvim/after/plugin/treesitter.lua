@@ -2,7 +2,7 @@
 -- See :h nvim-treesitter-modules for a list of available modules
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all"
-    ensure_installed = { "c", "cpp", "lua", "python", "bash", "rust", "cuda", "proto", "html", "javascript", "css"},
+    ensure_installed = { "c", "cpp", "lua", "python", "bash", "rust", "cuda", "proto", "html", "javascript", "css", "helm", "yaml" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = true,

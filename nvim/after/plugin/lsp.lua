@@ -67,6 +67,7 @@ require('lspconfig').luau_lsp.setup {
 require('lspconfig').clangd.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
 }
 
 require('lspconfig').bashls.setup {
@@ -78,6 +79,36 @@ require('lspconfig').rust_analyzer.setup{
     on_attach = on_attach,
     capabilities = capabilities,
 }
+
+require('lspconfig').bufls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+
+--require('lspconfig').helm_ls.setup {
+    --on_attach = on_attach,
+    --capabilities = capabilities,
+    --settings = {
+        --['helm-ls'] = {
+            --yamlls = {
+                --path = "yaml-language-server",
+            --}
+        --}
+    --}
+--}
+
+--require('lspconfig').yamlls.setup {
+    --on_attach = on_attach,
+    --capabilities = capabilities,
+    --settings = {
+        --yaml = {
+            --schemas = {
+                --["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+            --},
+        --},
+    --}
+--}
 
 -- nvim-cmp setup
 
