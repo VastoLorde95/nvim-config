@@ -80,11 +80,6 @@ require('lspconfig').rust_analyzer.setup{
     capabilities = capabilities,
 }
 
-require('lspconfig').bufls.setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
-
 --require('lspconfig').helm_ls.setup {
     --on_attach = on_attach,
     --capabilities = capabilities,
