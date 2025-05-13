@@ -10,13 +10,20 @@ return require('packer').startup(function(use)
     -- Plenary --
     use 'nvim-lua/plenary.nvim'
 
+    -- Colorschmes --
     -- sonokai colorscheme. --
     --use 'sainnhe/sonokai'
+    use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
+    use 'scottmckendry/cyberdream.nvim'
     use 'judaew/ronny.nvim'
+
+    -- Indentation
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- Statusline --
     use { 'nvim-lualine/lualine.nvim' }
-
+    
     -- LSP --
     -- mason installs lsp
     use 'williamboman/mason.nvim'
@@ -38,7 +45,7 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
 
     -- Telescope --
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.5', }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', }
 
     -- Diffview.nvim
     use 'sindrets/diffview.nvim'

@@ -13,7 +13,7 @@ local options = { noremap = true }
 
 -- tab creation
 map('n', '<Leader>t', ':tabe<CR>', options)
-map('n', '<Leader>w', ':tabc<CR>', options)
+map('n', '<Leader>w', ':tabc!<CR>', options)
 
 -- jump to search AND center the screen
 map('n', 'n', 'nzz', options)
@@ -25,3 +25,6 @@ map('n', 'g,', 'g,zz', options)
 
 --remove highlights
 map('n', '<Leader>n', ':nohlsearch<CR>', options)
+
+--git blame
+map('n', '<Leader>g', ':Gitsigns blame<CR>', options)

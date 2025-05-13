@@ -80,6 +80,33 @@ require('lspconfig').rust_analyzer.setup{
     capabilities = capabilities,
 }
 
+require('lspconfig').gopls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+--require('lspconfig').bufls.setup{
+    --on_attach = on_attach,
+    --capabilities = capabilities,
+--}
+
+--require'lspconfig'.tsserver.setup{
+  --init_options = {
+    --plugins = {
+      --{
+        --name = "@vue/typescript-plugin",
+        --location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+        --languages = {"javascript", "typescript", "vue"},
+      --},
+    --},
+  --},
+  --filetypes = {
+    --"javascript",
+    --"typescript",
+    --"vue",
+  --},
+--}
+
 --require('lspconfig').helm_ls.setup {
     --on_attach = on_attach,
     --capabilities = capabilities,
@@ -122,7 +149,7 @@ end
 
 
 -- `:h nvim-cmp`
-local cmp = require 'cmp'
+local cmp = require('cmp')
 cmp.setup {
     -- Uncomment if you want to autocomplete to be triggered only manually.
     --completion = {
