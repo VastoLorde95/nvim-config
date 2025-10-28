@@ -91,3 +91,5 @@ end
 
 -- Use to switch to cycle through header and implementation in c++
 vim.keymap.set('n', '<leader>fc', function() header_switcher(vim.api.nvim_buf_get_name(0)) end, options)
+
+require('telescope').load_extension('fzy_native')

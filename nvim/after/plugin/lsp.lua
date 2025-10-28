@@ -54,82 +54,53 @@ end
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require('lspconfig').pyright.setup {
+vim.lsp.config["pyright"] = {
+    cmd = { "uv", "run", "pyright-langserver", "--stdio"},
     on_attach = on_attach,
     capabilities = capabilities,
 }
+vim.lsp.enable("pyright")
 
-require('lspconfig').luau_lsp.setup {
+vim.lsp.config["luau_lsp"] = {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+vim.lsp.enable("luau_lsp")
 
-require('lspconfig').clangd.setup {
+vim.lsp.config["clangd"] = {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
 }
+vim.lsp.enable("clangd")
 
-require('lspconfig').bashls.setup {
+vim.lsp.config["bashls"] = {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+vim.lsp.enable("bashls")
 
-require('lspconfig').rust_analyzer.setup{
+vim.lsp.config["rust_analyzer"] = {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+vim.lsp.enable("rust_analyzer")
 
-require('lspconfig').gopls.setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+--require('lspconfig').gopls.setup{
+    --on_attach = on_attach,
+    --capabilities = capabilities,
+--}
 
 --require('lspconfig').bufls.setup{
     --on_attach = on_attach,
     --capabilities = capabilities,
 --}
 
---require'lspconfig'.tsserver.setup{
-  --init_options = {
-    --plugins = {
-      --{
-        --name = "@vue/typescript-plugin",
-        --location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-        --languages = {"javascript", "typescript", "vue"},
-      --},
-    --},
-  --},
-  --filetypes = {
-    --"javascript",
-    --"typescript",
-    --"vue",
-  --},
---}
-
---require('lspconfig').helm_ls.setup {
-    --on_attach = on_attach,
-    --capabilities = capabilities,
-    --settings = {
-        --['helm-ls'] = {
-            --yamlls = {
-                --path = "yaml-language-server",
-            --}
-        --}
-    --}
---}
-
---require('lspconfig').yamlls.setup {
-    --on_attach = on_attach,
-    --capabilities = capabilities,
-    --settings = {
-        --yaml = {
-            --schemas = {
-                --["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
-            --},
-        --},
-    --}
---}
+vim.lsp.config["helm_ls"] = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+vim.lsp.enable("helm_ls")
 
 -- nvim-cmp setup
 

@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     --use 'sainnhe/sonokai'
     use 'folke/tokyonight.nvim'
     use 'navarasu/onedark.nvim'
-    use 'scottmckendry/cyberdream.nvim'
+    use { "scottmckendry/cyberdream.nvim" }
     use 'judaew/ronny.nvim'
 
     -- Indentation
@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
 
     -- Telescope --
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', }
+    use { 'nvim-telescope/telescope-fzy-native.nvim' , run = 'make' }
 
     -- Diffview.nvim
     use 'sindrets/diffview.nvim'
@@ -55,6 +56,8 @@ return require('packer').startup(function(use)
 
     -- nerdcommenter
     use 'preservim/nerdcommenter'
+
+    --use 'xiyaowong/transparent.nvim'
 
     -- Tmux and Nvim integration
     use { 'alexghergh/nvim-tmux-navigation', config = function()
