@@ -41,8 +41,8 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lua'
 
     -- Treesitter --
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'nvim-treesitter/nvim-treesitter-context'
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
+    use { 'nvim-treesitter/nvim-treesitter-context', branch = 'master' }
 
     -- Telescope --
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', }
